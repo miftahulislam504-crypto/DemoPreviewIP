@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>Miftahul Islam, Projects</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -173,6 +178,7 @@ $("#sg").onclick=e=>{const b=e.target.closest("button");if(b)setW(b.dataset.w)};
 $("#cl").onclick=closeP;
 $("#cp").onclick=e=>{const b=e.currentTarget;navigator.clipboard.writeText(location.href).then(()=>{b.innerHTML=ICON_OK;setTimeout(()=>b.innerHTML=ICON_LINK,1600)})};
 document.onkeydown=e=>{if(e.key==="Escape"&&pv.classList.contains("on"))closeP()};
+if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script>
 </body>
 </html>

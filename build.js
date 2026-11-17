@@ -25,5 +25,6 @@ const vault = Object.entries(access).map(([pw, ids]) => {
 });
 
 fs.mkdirSync("dist", { recursive: true });
+fs.cpSync("public", "dist", { recursive: true }); // PWA manifest, service worker, icons
 fs.writeFileSync("dist/index.html", fs.readFileSync("template.html", "utf8").replace("__VAULT__", () => JSON.stringify(vault)));
 console.log("Built dist/index.html with " + vault.length + " password(s)");
