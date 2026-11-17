@@ -1,0 +1,155 @@
+[
+  {
+    "id": "brotherfit",
+    "name": "BrotherFit",
+    "category": "ecommerce",
+    "description": "A full storefront for a clothing brand: cart, checkout, and order tracking, backed by an admin panel and an AI-assisted customer support engine.",
+    "stack": "Next.js, Firebase, Firestore, Tailwind CSS",
+    "url": "https://brotherfit.vercel.app",
+    "year": "2026"
+  },
+  {
+    "id": "ummahnet",
+    "name": "UmmahNet",
+    "category": "community",
+    "description": "A social network for the Muslim community: Islamic content sharing, halal event discovery, and dawah-focused tools, rebuilt end-to-end in English.",
+    "stack": "Next.js, Firebase, Firestore, Auth",
+    "url": "https://ummahnet.vercel.app",
+    "year": "2026"
+  },
+  {
+    "id": "build-enginex",
+    "name": "Build EngineX",
+    "category": "ecommerce",
+    "description": "A marketplace connecting Bangladeshi builders with construction material suppliers, with bKash and SSLCommerz checkout, vendor and order management.",
+    "stack": "Next.js, Firebase, bKash API, SSLCommerz",
+    "url": "https://build-enginex.vercel.app",
+    "year": "2024"
+  },
+  {
+    "id": "business-suites",
+    "name": "Business Suites",
+    "category": "business",
+    "description": "An all-in-one SME dashboard: invoicing, multi-location inventory, HR/payroll records, and a business analytics view, in one tool instead of five.",
+    "stack": "Next.js, Firebase, Firestore, Chart.js",
+    "url": "https://businesssuites.vercel.app",
+    "year": "2025"
+  },
+  {
+    "id": "ak-ummah-foundation",
+    "name": "Ak Ummah Foundation",
+    "category": "community",
+    "description": "A donation platform for a non-profit: bKash-powered giving, campaign progress tracking, and welfare program listings donors can follow directly.",
+    "stack": "Next.js, Firebase, bKash API",
+    "url": "https://akummahfoundation.vercel.app",
+    "year": "2025"
+  },
+  {
+    "id": "chemistry-unfiltered",
+    "name": "Chemistry Unfiltered",
+    "category": "educational",
+    "description": "A Bengali-language chemistry platform organized subject > chapter > topic, with a rebuilt interactive periodic table and a hierarchical revision system.",
+    "stack": "Next.js, Firebase, Firestore, Tailwind CSS",
+    "url": "https://chemistry-unfiltered.vercel.app",
+    "year": "2025"
+  },
+  {
+    "id": "mathx",
+    "name": "MathX",
+    "category": "educational",
+    "description": "A visual mathematics learning universe: concept maps and step-by-step interactive explanations across 10+ subjects, installable as a PWA.",
+    "stack": "Next.js, PWA, Firebase",
+    "url": "https://mathxuniverse.vercel.app",
+    "year": "2025"
+  },
+  {
+    "id": "physicsverse",
+    "name": "PhysicsVerse",
+    "category": "educational",
+    "description": "Physics topics brought to life through interactive simulations and experiment-style modules, mapped directly to the SSC and HSC syllabus.",
+    "stack": "Next.js, Firebase, Three.js",
+    "url": "https://physicsverse.vercel.app",
+    "year": "2025"
+  },
+  {
+    "id": "esoquranshikhiacademy",
+    "name": "Esho Quran Shikhi Academy",
+    "category": "educational",
+    "description": "A step-by-step Quran and Arabic learning platform: Tajweed and Makhraj lessons, self-assessment, courses, and progress tracking through to certification.",
+    "stack": "Next.js, Firebase, Firestore",
+    "url": "https://esoquranshikhiacademy.vercel.app",
+    "year": "2026"
+  },
+  {
+    "id": "biomind",
+    "name": "BioMind",
+    "category": "educational",
+    "description": "A biology learning platform bringing concepts to life with structured lessons and interactive study tools for students.",
+    "stack": "Next.js, Firebase, Firestore",
+    "url": "https://biomindlogy.vercel.app",
+    "year": "2026"
+  },
+  {
+    "id": "enginex-hub",
+    "name": "EngineX Hub",
+    "category": "engineering",
+    "description": "The front door to the CivilOS suite: unified login, user profiles with project history, and sidebar navigation linking all six connected apps.",
+    "stack": "Next.js, Firebase Auth, Firestore",
+    "url": "https://enginex-hub.vercel.app",
+    "year": "2024"
+  },
+  {
+    "id": "enginex-archdrawing",
+    "name": "EngineX Arch Drawing",
+    "category": "engineering",
+    "description": "A full CAD workflow that runs entirely in the browser: BNBC-compliant floor plans, elevations, and sections, with PDF/SVG export.",
+    "stack": "Next.js, Canvas / SVG, Firebase",
+    "url": "https://enginexdraw.vercel.app",
+    "year": "2025"
+  },
+  {
+    "id": "enginex-structural",
+    "name": "EngineX Structural",
+    "category": "engineering",
+    "description": "Structural design across 20+ modules: a DSM solver, full RC design per ACI 318-19, 3D space frame analysis, code-checks, and DXF export.",
+    "stack": "JavaScript, DSM Solver, 3D Engine",
+    "url": "https://enginexstruc.vercel.app",
+    "year": "2025"
+  },
+  {
+    "id": "enginex-estimate",
+    "name": "EngineX Estimate",
+    "category": "engineering",
+    "description": "Automated Bill of Quantities generation priced against live Bangladeshi market rates, exportable cleanly to PDF or Excel.",
+    "stack": "Next.js, Firebase, PDF Export",
+    "url": "https://enginexquanta.vercel.app",
+    "year": "2024"
+  },
+  {
+    "id": "enginex-projectmgmt",
+    "name": "EngineX Project Mgmt",
+    "category": "engineering",
+    "description": "Construction PM software: Gantt-based scheduling, milestone progress tracking, RAJUK/CDA compliance checklists, and team task assignment.",
+    "stack": "Next.js, Firebase, Firestore",
+    "url": "https://enginexproject.vercel.app",
+    "year": "2024"
+  },
+  {
+    "id": "enginex-learning",
+    "name": "EngineX Learning",
+    "category": "engineering",
+    "description": "Civil engineering exam prep aligned to the BNBC syllabus: MCQ, Viva, and Flashcard study modes with progress tracking across sessions.",
+    "stack": "Next.js, Firebase, Firestore",
+    "url": "https://enginexlearn.vercel.app",
+    "year": "2024"
+  },
+  {
+    "id": "melvora-bd",
+    "name": "Melvora BD",
+    "category": "ecommerce",
+    "description": "",
+    "stack": "",
+    "url": "https://melvora-bd.miftahulislam504.workers.dev",
+    "year": ""
+  }
+]

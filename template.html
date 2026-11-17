@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Miftahul Islam, Projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{--mute:#666;--line:#d8d8d8;--serif:"Instrument Serif",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff;color:#000;font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+[hidden]{display:none!important}
+
+/* password gate */
+#gate{position:fixed;inset:0;z-index:80;background:#fff;display:grid;place-items:center;padding:24px;transition:opacity .7s var(--ease),visibility 0s .7s}
+#gate.off{opacity:0;visibility:hidden}
+#gf{width:100%;max-width:340px}
+#gf h1{font:400 44px/1 var(--serif);letter-spacing:-.02em;margin-bottom:10px}
+#gf p{color:var(--mute);margin-bottom:32px}
+#pw{width:100%;padding:10px 0;border:0;border-bottom:1px solid #000;background:none;font:inherit;border-radius:0;outline:0;transition:border-width .2s}
+#pw:focus{border-bottom-width:2px;padding-bottom:9px}
+#gf .btn{margin-top:24px;width:100%}
+#er{min-height:24px;margin-top:12px;color:#000;font-size:15px}
+.shake{animation:sh .4s}
+@keyframes sh{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.btn{display:inline-block;padding:13px 26px;border:1px solid #000;border-radius:99px;background:#000;color:#fff;transition:background .4s var(--ease),color .4s var(--ease)}
+.btn:hover{background:#fff;color:#000}
+.btn:disabled{opacity:.5;cursor:wait}
+
+/* projects */
+#app{opacity:0;transition:opacity .9s var(--ease)}
+#app.in{opacity:1}
+.top{padding:24px 0;font-weight:500}
+.hd{padding:72px 0 40px}
+.hd h1{font:400 clamp(56px,11vw,128px)/.95 var(--serif);letter-spacing:-.03em;margin-bottom:16px}
+.hd p{color:var(--mute)}
+#fl{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:28px}
+#fl button{padding-bottom:4px;color:var(--mute);border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+#fl button[aria-pressed=true]{color:#000;border-color:#000}
+.card{display:block;cursor:pointer}
+.th{position:relative;aspect-ratio:16/10;overflow:hidden;background:#f2f2f2;border:1px solid #000}
+.th iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;background:#fff;transform-origin:0 0;transform:scale(var(--s,.3));pointer-events:none;opacity:0;transition:opacity .8s var(--ease)}
+.th iframe.ld{opacity:1}
+.th::after{content:"Preview";position:absolute;inset:0;display:grid;place-items:center;background:#000;color:#fff;opacity:0;transition:opacity .5s var(--ease)}
+.card:hover .th::after,.card:focus-visible .th::after{opacity:.85}
+.ci{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:16px}
+.rn{font:400 clamp(26px,3.4vw,36px)/1.1 var(--serif)}
+.rm{color:var(--mute);font-size:15px;white-space:nowrap}
+.rd{color:var(--mute);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#pl{display:grid;grid-template-columns:repeat(2,1fr);gap:56px 32px;padding-bottom:96px}
+
+/* preview viewer */
+.pv{position:fixed;inset:0;z-index:70;background:#000;color:#fff;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:scale(.985);transition:opacity .5s var(--ease),transform .5s var(--ease),visibility 0s .5s}
+.pv.on{opacity:1;visibility:visible;transform:none;transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.bar{display:flex;align-items:center;flex-wrap:nowrap;gap:10px;padding:10px 14px;border-bottom:1px solid #333}
+#pn{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+.seg,.acts{display:flex;gap:6px;flex:none}
+.seg{margin-right:8px}
+.ib{width:38px;height:38px;display:grid;place-items:center;border:1px solid #444;border-radius:50%;transition:background .3s,color .3s,border-color .3s}
+.ib:hover,.ib[aria-pressed=true]{background:#fff;color:#000;border-color:#fff}
+.stage{flex:1;position:relative;display:flex;justify-content:center;min-height:0}
+.fb{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:#888}
+.fw{position:relative;height:100%;width:100%;overflow:hidden;transition:width .6s var(--ease)}
+#fr{position:absolute;top:0;left:0;border:0;background:transparent;transform-origin:0 0}
+@media(max-width:760px){#pl{grid-template-columns:1fr;gap:44px}}
+@media(max-width:430px){.bar{gap:6px;padding:8px 10px}.ib{width:34px;height:34px}.seg{margin-right:4px}.seg,.acts{gap:4px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+<form id="gf" autocomplete="off">
+<h1>Miftahul Islam</h1>
+<p>Enter the password to view the projects.</p>
+<input id="pw" type="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
+<div id="er" role="alert"></div>
+<button class="btn" type="submit">View projects</button>
+</form>
+</div>
+
+<div id="app">
+<div class="wrap">
+<div class="top">Miftahul Islam</div>
+<div class="hd"><h1>Projects</h1><p>Select a project to preview it live.</p></div>
+<div id="fl"></div><div id="pl"></div>
+</div>
+</div>
+
+<div class="pv" id="pv" role="dialog" aria-modal="true" aria-label="Project preview" aria-hidden="true">
+<div class="bar">
+<strong id="pn"></strong>
+<div class="seg" id="sg">
+<button class="ib" data-w="d" aria-pressed="true" title="Desktop" aria-label="Desktop"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></button>
+<button class="ib" data-w="t" aria-pressed="false" title="Tablet" aria-label="Tablet"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 18h2"/></svg></button>
+<button class="ib" data-w="m" aria-pressed="false" title="Mobile" aria-label="Mobile"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></button>
+</div>
+<div class="acts">
+<button class="ib" id="cp" title="Copy link" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></button>
+<a class="ib" id="op" target="_blank" rel="noopener" title="Open in new tab" aria-label="Open in new tab"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+<button class="ib" id="cl" title="Close" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+</div>
+<div class="stage"><p class="fb">Loading preview. If it stays blank, the site blocks embedding. Use the open in new tab button.</p><div class="fw" id="fw"><iframe id="fr" title="Website preview"></iframe></div></div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const CATS=[["community","Community"],["engineering","Engineering"],["ecommerce","E-commerce"],["educational","Educational"],["business","Business tools"]];
+let P=[];const VAULT=__VAULT__;
+
+const ci=c=>CATS.findIndex(x=>x[0]===c);
+let f="all";
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const m=document.createElement("iframe");m.tabIndex=-1;m.setAttribute("aria-hidden","true");m.onload=()=>m.classList.add("ld");m.src=e.target.dataset.u;e.target.appendChild(m)}),{rootMargin:"250px"});
+function fit(){$$(".th").forEach(t=>t.style.setProperty("--s",t.clientWidth/1280))}
+function list(){
+  $("#pl").innerHTML=P.filter(p=>f==="all"||p[2]===f).sort((a,b)=>ci(a[2])-ci(b[2])).map(p=>`<div class="card" role="button" tabindex="0" data-id="${p[0]}"><div class="th" data-u="${p[5]}"></div><div class="ci"><span class="rn">${p[1]}</span><span class="rm">${[CATS[ci(p[2])][1],p[6]].filter(Boolean).join(", ")}</span></div>${p[3]?`<p class="rd">${p[3]}</p>`:""}</div>`).join("");
+  $$("#fl button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.f===f));
+  fit();$$(".th").forEach(t=>io.observe(t));
+}
+addEventListener("resize",()=>{fit();layout()});
+
+const pv=$("#pv"),fr=$("#fr");
+const ICON_LINK=$("#cp").innerHTML,ICON_OK='<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>';
+let vw="d";const VW={t:820,m:390};
+function layout(){const st=$(".stage"),v=vw==="d"?Math.max(1280,st.clientWidth):vw==="m"&&st.clientWidth<=480?st.clientWidth:VW[vw],s=Math.min(1,st.clientWidth/v);$("#fw").style.width=v*s+"px";fr.style.width=v+"px";fr.style.height=st.clientHeight/s+"px";fr.style.transform="scale("+s+")"}
+function setW(k){vw=k;$$("#sg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.w===k));layout()}
+function openP(id){const p=P.find(x=>x[0]===id);if(!p)return;$("#pn").textContent=p[1];$("#op").href=p[5];fr.src=p[5];setW(innerWidth<700?"m":innerWidth<1024?"t":"d");pv.classList.add("on");pv.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";history.replaceState(null,"","#preview="+id);$("#cl").focus()}
+function closeP(){pv.classList.remove("on");pv.setAttribute("aria-hidden","true");document.body.style.overflow="";fr.src="about:blank";history.replaceState(null,"",location.pathname)}
+
+const bin=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function decrypt(pw){
+  const base=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
+  for(const r of VAULT){try{
+    const k=await crypto.subtle.deriveKey({name:"PBKDF2",salt:bin(r.s),iterations:200000,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["decrypt"]);
+    return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:bin(r.i)},k,bin(r.d))));
+  }catch(x){}}
+  return null;
+}
+function unlock(items){
+  P=items;
+  const cs=CATS.filter(c=>P.some(p=>p[2]===c[0]));
+  $("#fl").innerHTML=cs.length>1?[["all","All"],...cs].map(c=>`<button data-f="${c[0]}">${c[1]}</button>`).join(""):"";
+  list();
+  $("#gate").classList.add("off");
+  requestAnimationFrame(()=>$("#app").classList.add("in"));
+  const m=location.hash.match(/^#preview=(.+)$/);if(m)openP(decodeURIComponent(m[1]));
+}
+$("#gf").onsubmit=async e=>{
+  e.preventDefault();const er=$("#er"),pw=$("#pw"),bt=$("#gf .btn");
+  if(!window.crypto||!crypto.subtle){er.textContent="This page must be opened over HTTPS.";return}
+  er.textContent="";bt.disabled=true;bt.textContent="Checking";
+  const items=await decrypt(pw.value);
+  bt.disabled=false;bt.textContent="View projects";
+  if(items)unlock(items);
+  else{er.textContent="Incorrect password.";pw.value="";$("#gf").classList.remove("shake");void $("#gf").offsetWidth;$("#gf").classList.add("shake");pw.focus()}
+};
+$("#pw").focus();
+
+$("#fl").onclick=e=>{const b=e.target.closest("button");if(b){f=b.dataset.f;list()}};
+$("#pl").onclick=e=>{const r=e.target.closest(".card");if(r)openP(r.dataset.id)};
+$("#pl").onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("card")){e.preventDefault();openP(e.target.dataset.id)}};
+$("#sg").onclick=e=>{const b=e.target.closest("button");if(b)setW(b.dataset.w)};
+$("#cl").onclick=closeP;
+$("#cp").onclick=e=>{const b=e.currentTarget;navigator.clipboard.writeText(location.href).then(()=>{b.innerHTML=ICON_OK;setTimeout(()=>b.innerHTML=ICON_LINK,1600)})};
+document.onkeydown=e=>{if(e.key==="Escape"&&pv.classList.contains("on"))closeP()};
+</script>
+</body>
+</html>
