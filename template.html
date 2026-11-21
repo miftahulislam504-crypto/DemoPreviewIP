@@ -111,11 +111,10 @@ svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke
 </div>
 <div class="acts">
 <button class="ib" id="cp" title="Copy link" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></button>
-<a class="ib" id="op" target="_blank" rel="noopener" title="Open in new tab" aria-label="Open in new tab"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
 <button class="ib" id="cl" title="Close" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
 </div>
 </div>
-<div class="stage"><p class="fb">Loading preview. If it stays blank, the site blocks embedding. Use the open in new tab button.</p><div class="fw" id="fw"><iframe id="fr" title="Website preview"></iframe></div></div>
+<div class="stage"><p class="fb">Loading preview. If it stays blank, the site blocks embedding.</p><div class="fw" id="fw"><iframe id="fr" title="Website preview"></iframe></div></div>
 </div>
 
 <script>
@@ -139,7 +138,7 @@ const ICON_LINK=$("#cp").innerHTML,ICON_OK='<svg viewBox="0 0 24 24"><path d="M5
 let vw="d";const VW={t:820,m:390};
 function layout(){const st=$(".stage"),v=vw==="d"?Math.max(1280,st.clientWidth):vw==="m"&&st.clientWidth<=480?st.clientWidth:VW[vw],s=Math.min(1,st.clientWidth/v);$("#fw").style.width=v*s+"px";fr.style.width=v+"px";fr.style.height=st.clientHeight/s+"px";fr.style.transform="scale("+s+")"}
 function setW(k){vw=k;$$("#sg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.w===k));layout()}
-function openP(id){const p=P.find(x=>x[0]===id);if(!p)return;$("#pn").textContent=p[1];$("#op").href=p[5];fr.src=p[5];setW(innerWidth<700?"m":innerWidth<1024?"t":"d");pv.classList.add("on");pv.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";history.replaceState(null,"","#preview="+id);$("#cl").focus()}
+function openP(id){const p=P.find(x=>x[0]===id);if(!p)return;$("#pn").textContent=p[1];fr.src=p[5];setW(innerWidth<700?"m":innerWidth<1024?"t":"d");pv.classList.add("on");pv.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";history.replaceState(null,"","#preview="+id);$("#cl").focus()}
 function closeP(){pv.classList.remove("on");pv.setAttribute("aria-hidden","true");document.body.style.overflow="";fr.src="about:blank";history.replaceState(null,"",location.pathname)}
 
 const bin=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
