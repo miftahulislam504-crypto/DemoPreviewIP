@@ -33,7 +33,7 @@
     "description": "An all-in-one SME dashboard: invoicing, multi-location inventory, HR/payroll records, and a business analytics view, in one tool instead of five.",
     "stack": "Next.js, Firebase, Firestore, Chart.js",
     "url": "https://businesssuites.vercel.app",
-    "year": "2025"
+    "year": "2023"
   },
   {
     "id": "ak-ummah-foundation",
@@ -69,7 +69,7 @@
     "description": "Physics topics brought to life through interactive simulations and experiment-style modules, mapped directly to the SSC and HSC syllabus.",
     "stack": "Next.js, Firebase, Three.js",
     "url": "https://physicsverse.vercel.app",
-    "year": "2025"
+    "year": "2023"
   },
   {
     "id": "esoquranshikhiacademy",
@@ -87,7 +87,7 @@
     "description": "A biology learning platform bringing concepts to life with structured lessons and interactive study tools for students.",
     "stack": "Next.js, Firebase, Firestore",
     "url": "https://biomindlogy.vercel.app",
-    "year": "2026"
+    "year": "2024"
   },
   {
     "id": "enginex-hub",
@@ -96,7 +96,7 @@
     "description": "The front door to the CivilOS suite: unified login, user profiles with project history, and sidebar navigation linking all six connected apps.",
     "stack": "Next.js, Firebase Auth, Firestore",
     "url": "https://enginex-hub.vercel.app",
-    "year": "2024"
+    "year": "2022"
   },
   {
     "id": "enginex-archdrawing",
@@ -105,7 +105,7 @@
     "description": "A full CAD workflow that runs entirely in the browser: BNBC-compliant floor plans, elevations, and sections, with PDF/SVG export.",
     "stack": "Next.js, Canvas / SVG, Firebase",
     "url": "https://enginexdraw.vercel.app",
-    "year": "2025"
+    "year": "2023"
   },
   {
     "id": "enginex-structural",
@@ -114,7 +114,7 @@
     "description": "Structural design across 20+ modules: a DSM solver, full RC design per ACI 318-19, 3D space frame analysis, code-checks, and DXF export.",
     "stack": "JavaScript, DSM Solver, 3D Engine",
     "url": "https://enginexstruc.vercel.app",
-    "year": "2025"
+    "year": "2022"
   },
   {
     "id": "enginex-estimate",
@@ -141,7 +141,7 @@
     "description": "Civil engineering exam prep aligned to the BNBC syllabus: MCQ, Viva, and Flashcard study modes with progress tracking across sessions.",
     "stack": "Next.js, Firebase, Firestore",
     "url": "https://enginexlearn.vercel.app",
-    "year": "2024"
+    "year": "2020"
   },
   {
     "id": "melvora-bd",
@@ -150,6 +150,15 @@
     "description": "",
     "stack": "",
     "url": "https://melvora-bd.miftahulislam504.workers.dev",
+    "year": ""
+  },
+  {
+    "id": "ez_infosys_service",
+    "name": "EZ Infosys Service",
+    "category": "IT Company",
+    "description": "",
+    "stack": "",
+    "url": "https://ezinfosysservice.vercel.app",
     "year": ""
   }
 ]
