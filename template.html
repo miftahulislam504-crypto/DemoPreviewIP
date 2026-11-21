@@ -48,9 +48,6 @@ svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke
 .hd{padding:72px 0 40px}
 .hd h1{font:400 clamp(56px,11vw,128px)/.95 var(--serif);letter-spacing:-.03em;margin-bottom:16px}
 .hd p{color:var(--mute)}
-#fl{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:28px}
-#fl button{padding-bottom:4px;color:var(--mute);border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
-#fl button[aria-pressed=true]{color:#000;border-color:#000}
 .card{display:block;cursor:pointer}
 .th{position:relative;aspect-ratio:16/10;overflow:hidden;background:#f2f2f2;border:1px solid #000}
 .th iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;background:#fff;transform-origin:0 0;transform:scale(var(--s,.3));pointer-events:none;opacity:0;transition:opacity .8s var(--ease)}
@@ -97,7 +94,7 @@ svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke
 <div class="wrap">
 <div class="top">Miftahul Islam</div>
 <div class="hd"><h1>Projects</h1><p>Select a project to preview it live.</p></div>
-<div id="fl"></div><div id="pl"></div>
+<div id="pl"></div>
 </div>
 </div>
 
@@ -119,16 +116,12 @@ svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const CATS=[["community","Community"],["engineering","Engineering"],["ecommerce","E-commerce"],["educational","Educational"],["business","Business tools"]];
 let P=[];const VAULT=__VAULT__;
 
-const ci=c=>CATS.findIndex(x=>x[0]===c);
-let f="all";
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const m=document.createElement("iframe");m.tabIndex=-1;m.setAttribute("aria-hidden","true");m.onload=()=>m.classList.add("ld");m.src=e.target.dataset.u;e.target.appendChild(m)}),{rootMargin:"250px"});
 function fit(){$$(".th").forEach(t=>t.style.setProperty("--s",t.clientWidth/1280))}
 function list(){
-  $("#pl").innerHTML=P.filter(p=>f==="all"||p[2]===f).sort((a,b)=>ci(a[2])-ci(b[2])).map(p=>`<div class="card" role="button" tabindex="0" data-id="${p[0]}"><div class="th" data-u="${p[5]}"></div><div class="ci"><span class="rn">${p[1]}</span><span class="rm">${[CATS[ci(p[2])][1],p[6]].filter(Boolean).join(", ")}</span></div>${p[3]?`<p class="rd">${p[3]}</p>`:""}</div>`).join("");
-  $$("#fl button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.f===f));
+  $("#pl").innerHTML=P.map(p=>`<div class="card" role="button" tabindex="0" data-id="${p[0]}"><div class="th" data-u="${p[4]}"></div><div class="ci"><span class="rn">${p[1]}</span><span class="rm">${p[5]}</span></div>${p[2]?`<p class="rd">${p[2]}</p>`:""}</div>`).join("");
   fit();$$(".th").forEach(t=>io.observe(t));
 }
 addEventListener("resize",()=>{fit();layout()});
@@ -138,7 +131,7 @@ const ICON_LINK=$("#cp").innerHTML,ICON_OK='<svg viewBox="0 0 24 24"><path d="M5
 let vw="d";const VW={t:820,m:390};
 function layout(){const st=$(".stage"),v=vw==="d"?Math.max(1280,st.clientWidth):vw==="m"&&st.clientWidth<=480?st.clientWidth:VW[vw],s=Math.min(1,st.clientWidth/v);$("#fw").style.width=v*s+"px";fr.style.width=v+"px";fr.style.height=st.clientHeight/s+"px";fr.style.transform="scale("+s+")"}
 function setW(k){vw=k;$$("#sg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.w===k));layout()}
-function openP(id){const p=P.find(x=>x[0]===id);if(!p)return;$("#pn").textContent=p[1];fr.src=p[5];setW(innerWidth<700?"m":innerWidth<1024?"t":"d");pv.classList.add("on");pv.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";history.replaceState(null,"","#preview="+id);$("#cl").focus()}
+function openP(id){const p=P.find(x=>x[0]===id);if(!p)return;$("#pn").textContent=p[1];fr.src=p[4];setW(innerWidth<700?"m":innerWidth<1024?"t":"d");pv.classList.add("on");pv.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";history.replaceState(null,"","#preview="+id);$("#cl").focus()}
 function closeP(){pv.classList.remove("on");pv.setAttribute("aria-hidden","true");document.body.style.overflow="";fr.src="about:blank";history.replaceState(null,"",location.pathname)}
 
 const bin=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
@@ -152,8 +145,6 @@ async function decrypt(pw){
 }
 function unlock(items){
   P=items;
-  const cs=CATS.filter(c=>P.some(p=>p[2]===c[0]));
-  $("#fl").innerHTML=cs.length>1?[["all","All"],...cs].map(c=>`<button data-f="${c[0]}">${c[1]}</button>`).join(""):"";
   list();
   $("#gate").classList.add("off");
   requestAnimationFrame(()=>$("#app").classList.add("in"));
@@ -165,12 +156,11 @@ $("#gf").onsubmit=async e=>{
   er.textContent="";bt.disabled=true;bt.textContent="Checking";
   const items=await decrypt(pw.value);
   bt.disabled=false;bt.textContent="View projects";
-  if(items)unlock(items);
+  if(items){try{unlock(items)}catch(x){console.error(x);er.textContent="Could not load the projects."}}
   else{er.textContent="Incorrect password.";pw.value="";$("#gf").classList.remove("shake");void $("#gf").offsetWidth;$("#gf").classList.add("shake");pw.focus()}
 };
 $("#pw").focus();
 
-$("#fl").onclick=e=>{const b=e.target.closest("button");if(b){f=b.dataset.f;list()}};
 $("#pl").onclick=e=>{const r=e.target.closest(".card");if(r)openP(r.dataset.id)};
 $("#pl").onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("card")){e.preventDefault();openP(e.target.dataset.id)}};
 $("#sg").onclick=e=>{const b=e.target.closest("button");if(b)setW(b.dataset.w)};

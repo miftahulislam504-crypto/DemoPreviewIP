@@ -7,7 +7,7 @@ const access = JSON.parse(process.env.ACCESS || "{}");
 if (!Object.keys(access).length) { console.error("ACCESS secret is empty"); process.exit(1); }
 
 const all = JSON.parse(fs.readFileSync("projects.json", "utf8"))
-  .map(o => [o.id, o.name, o.category, o.description || "", o.stack || "", o.url, o.year || ""]);
+  .map(o => [o.id, o.name, o.description || "", o.stack || "", o.url, o.year || ""]);
 
 function seal(pw, data) {
   const salt = randomBytes(16), iv = randomBytes(12);
