@@ -3,7 +3,33 @@
 const fs = require("fs");
 const { pbkdf2Sync, randomBytes, createCipheriv } = require("crypto");
 
-const access = JSON.parse(process.env.ACCESS || "{}");
+// Phone keyboards sometimes put a line break or tab inside a quoted password/id, which breaks JSON.
+// A password field is single-line, so such characters could never be typed anyway: drop them inside strings.
+function stripControlInStrings(src) {
+  let out = "", inStr = false, esc = false;
+  for (const ch of src) {
+    if (inStr && ch < " ") continue;
+    out += ch;
+    if (esc) esc = false;
+    else if (inStr && ch === "\\") esc = true;
+    else if (ch === '"') inStr = !inStr;
+  }
+  return out;
+}
+
+let access;
+try {
+  access = JSON.parse(stripControlInStrings(process.env.ACCESS || "{}"));
+  if (!access || typeof access !== "object" || Array.isArray(access)) throw new Error("it must be an object like {\"password\": ...}");
+  for (const [pw, ids] of Object.entries(access))
+    if (ids !== "*" && !(Array.isArray(ids) && ids.every(x => typeof x === "string")))
+      throw new Error("the value for one password must be \"*\" or a list of project ids in [ ]");
+} catch (e) {
+  console.error("ACCESS secret is not valid: " + e.message);
+  console.error("Fix it on one line with straight quotes (\"), commas between items, no comma after the last one.");
+  console.error('Example: {"admin-pass":"*","client-a":["ez_menu","ez_erp"]}');
+  process.exit(1);
+}
 if (!Object.keys(access).length) { console.error("ACCESS secret is empty"); process.exit(1); }
 
 const all = JSON.parse(fs.readFileSync("projects.json", "utf8"))
