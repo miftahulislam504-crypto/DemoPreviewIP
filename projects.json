@@ -142,5 +142,37 @@
     "stack": "",
     "url": "https://ezinfosysservice.vercel.app",
     "year": ""
+  },
+  {
+    "id": "ez_menu",
+    "name": "EZ Menu",
+    "description": "Digital menu and restaurant ordering platform.",
+    "stack": "",
+    "url": "https://miftahulislam504-crypto.github.io/EZ_MENU/",
+    "year": ""
+  },
+  {
+    "id": "ez_erp",
+    "name": "EZ ERP",
+    "description": "",
+    "stack": "",
+    "url": "https://miftahulislam504-crypto.github.io/EZ_ERP/",
+    "year": ""
+  },
+  {
+    "id": "ez_workforce",
+    "name": "EZ Workforce",
+    "description": "",
+    "stack": "",
+    "url": "https://miftahulislam504-crypto.github.io/EZ_Workforce/",
+    "year": ""
+  },
+  {
+    "id": "ez_pos",
+    "name": "EZ POS",
+    "description": "",
+    "stack": "",
+    "url": "https://miftahulislam504-crypto.github.io/EZ_POS/",
+    "year": ""
   }
 ]
