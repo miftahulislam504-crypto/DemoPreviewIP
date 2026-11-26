@@ -125,7 +125,7 @@
     "description": "Civil engineering exam prep aligned to the BNBC syllabus: MCQ, Viva, and Flashcard study modes with progress tracking across sessions.",
     "stack": "Next.js, Firebase, Firestore",
     "url": "https://enginexlearn.vercel.app",
-    "year": "2020"
+    "year": "2022"
   },
   {
     "id": "melvora-bd",
@@ -133,7 +133,7 @@
     "description": "",
     "stack": "",
     "url": "https://melvora-bd.miftahulislam504.workers.dev",
-    "year": ""
+    "year": "2026"
   },
   {
     "id": "ez_infosys_service",
@@ -141,7 +141,7 @@
     "description": "",
     "stack": "",
     "url": "https://ezinfosysservice.vercel.app",
-    "year": ""
+    "year": "2026"
   },
   {
     "id": "ez_menu",
@@ -149,7 +149,7 @@
     "description": "Digital menu and restaurant ordering platform.",
     "stack": "",
     "url": "https://miftahulislam504-crypto.github.io/EZ_MENU/",
-    "year": ""
+    "year": "2026"
   },
   {
     "id": "ez_erp",
@@ -157,7 +157,7 @@
     "description": "",
     "stack": "",
     "url": "https://miftahulislam504-crypto.github.io/EZ_ERP/",
-    "year": ""
+    "year": "2026"
   },
   {
     "id": "ez_workforce",
@@ -165,7 +165,23 @@
     "description": "",
     "stack": "",
     "url": "https://miftahulislam504-crypto.github.io/EZ_Workforce/",
-    "year": ""
+    "year": "2026"
+  },
+  {
+    "id": "Shoktifoods",
+    "name": "Shokti Foods",
+    "description": "",
+    "stack": "",
+    "url": "https://shoktifoods.miftahulislam506.workers.dev",
+    "year": "2026"
+  },
+  {
+    "id": "fly_consultancy",
+    "name": "Fly Consultancy",
+    "description": "",
+    "stack": "",
+    "url": "https://flyconsultancy.vercel.app",
+    "year": "2026"
   },
   {
     "id": "ez_pos",
@@ -173,6 +189,6 @@
     "description": "",
     "stack": "",
     "url": "https://miftahulislam504-crypto.github.io/EZ_POS/",
-    "year": ""
+    "year": "2026"
   }
 ]
